@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="falc.dungeonmasterhelper.HomeActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    android:id="@+id/appbarlayout">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/Toolbar"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+</android.support.design.widget.AppBarLayout>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scroll_view_layout"
+    android:layout_below="@+id/appbarlayout">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/monstername"
+        android:text="Monster Name"
+        android:textColor="@color/colorInk"
+        android:textSize="24dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/appbarlayout"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/typeandalignment"
+        android:textSize="18dp"
+        android:textStyle="italic"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/monstername"
+        android:text="Size Type, Alignment"
+        android:paddingLeft="5dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/typeandalignment"
+        android:layout_alignParentStart="true"
+        android:id="@+id/monsternamebar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/actag"
+        android:text="Armor Class"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/monsternamebar"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/armorclass"
+        android:text="Number"
+        android:textColor="@color/colorInk"
+        android:textSize="18dp"
+        android:layout_below="@id/monsternamebar"
+        android:layout_toRightOf="@id/actag"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hptag"
+        android:text="Hit Points"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/actag"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hitpoints"
+        android:text="Number"
+        android:textColor="@color/colorInk"
+        android:textSize="18dp"
+        android:layout_below="@id/actag"
+        android:layout_toRightOf="@id/hptag"
+        android:paddingLeft="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speedtag"
+        android:textColor="@color/colorInk"
+        android:text="Speed"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_below="@id/hptag"
+        android:paddingLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speed"
+        android:text="Number"
+        android:textSize="18dp"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hptag"
+        android:layout_toRightOf="@id/speedtag"
+        android:paddingLeft="5dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/speedtag"
+        android:layout_alignParentStart="true"
+        android:id="@+id/hpacspeedbar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strtag"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hpacspeedbar"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="STR"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strength"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/strtag"
+        android:textSize="18dp"
+        android:text="###"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dextag"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hpacspeedbar"
+        android:layout_toRightOf="@id/strtag"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="DEX"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dexterity"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/dextag"
+        android:layout_toRightOf="@id/strength"
+        android:textSize="18dp"
+        android:text="###"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/contag"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hpacspeedbar"
+        android:layout_toRightOf="@id/dextag"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="CON"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/constitution"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/contag"
+        android:layout_toRightOf="@id/dexterity"
+        android:textSize="18dp"
+        android:text="###"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inttag"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hpacspeedbar"
+        android:layout_toRightOf="@id/contag"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="INT"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/intelligence"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/inttag"
+        android:layout_toRightOf="@id/constitution"
+        android:textSize="18dp"
+        android:text="###"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wistag"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hpacspeedbar"
+        android:layout_toRightOf="@id/inttag"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="WIS"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/wisdom"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/wistag"
+        android:layout_toRightOf="@id/intelligence"
+        android:textSize="18dp"
+        android:text="###"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chatag"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/hpacspeedbar"
+        android:layout_toRightOf="@id/wistag"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="CHA"
+        android:paddingLeft="25dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/charisma"
+        android:textColor="@color/colorInk"
+        android:layout_below="@id/chatag"
+        android:layout_toRightOf="@id/wisdom"
+        android:textSize="18dp"
+        android:text="###"
+        android:paddingLeft="25dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/strength"
+        android:layout_alignParentStart="true"
+        android:id="@+id/statblockbar"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/savingtag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/statblockbar"
+        android:text="Saving Throws"
+        android:textColor="@color/colorInk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/skilltag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/savingtag"
+        android:text="Skills"
+        android:textColor="@color/colorInk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/damresisttag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/skilltag"
+        android:text="Damage Resistances"
+        android:textColor="@color/colorInk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/damimmunetag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/damresisttag"
+        android:text="Damage Immunities"
+        android:textColor="@color/colorInk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/condimmunetag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/damimmunetag"
+        android:text="Condition Immunities"
+        android:textColor="@color/colorInk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sensestag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/condimmunetag"
+        android:text="Senses"
+        android:textColor="@color/colorInk"/>
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/languagetag"
+    android:textSize="18dip"
+    android:textStyle="bold"
+    android:paddingLeft="5dp"
+    android:layout_below="@id/sensestag"
+    android:text="Languages"
+    android:textColor="@color/colorInk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/challengetag"
+        android:textSize="18dip"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:layout_below="@id/languagetag"
+        android:text="Challenge"
+        android:textColor="@color/colorInk"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/challengetag"
+        android:layout_alignParentStart="true"
+        android:id="@+id/infobar"
+        android:layout_margin="5dp"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/traits"
+        android:layout_below="@id/infobar">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/actiontag"
+        android:text="ACTIONS"
+        android:textColor="@color/colorInk"
+        android:textSize="24dp"
+        android:paddingLeft="5dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/traits" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/actiontag"
+        android:layout_alignParentStart="true"
+        android:id="@+id/actionbar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/actions"
+        android:layout_below="@id/actionbar">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/reactiontag"
+        android:text="REACTIONS"
+        android:textColor="@color/colorInk"
+        android:textSize="24dp"
+        android:paddingLeft="5dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/actions" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/reactiontag"
+        android:layout_alignParentStart="true"
+        android:id="@+id/reactionbar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reactions"
+        android:layout_below="@+id/reactionbar">
+    </ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/legendaryactiontag"
+        android:text="LEGENDARY ACTIONS"
+        android:textColor="@color/colorInk"
+        android:textSize="24dp"
+        android:paddingLeft="5dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/reactions"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="@color/colorInk"
+        android:layout_below="@+id/legendaryactiontag"
+        android:layout_alignParentStart="true"
+        android:id="@+id/legendaryactionbar"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/legendaryactions"
+        android:layout_below="@id/legendaryactionbar">
+    </ListView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lairactiontag"
+            android:text="LAIR ACTIONS"
+            android:textColor="@color/colorInk"
+            android:textSize="24dp"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/legendaryactions" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="@color/colorInk"
+            android:layout_below="@+id/lairactiontag"
+            android:layout_alignParentStart="true"
+            android:id="@+id/lairactionbar"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lairactions"
+            android:layout_below="@id/lairactionbar">
+        </ListView>
+
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

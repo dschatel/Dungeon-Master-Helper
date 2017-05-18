@@ -1,14 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DMHTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorInk</item>
+        <item name="android:colorPrimaryDark">@color/colorParchmentTop</item>
+        <item name="colorAccent">@color/colorInk</item>
+        <item name="android:textColorPrimary">@color/colorInk</item>
+        <item name="android:windowBackground">@color/colorParchment</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
+    <style name="Toolbar">
+        <item name="android:textColorPrimary">@color/colorParchmentTop</item>
+        <item name="android:colorPrimary">@color/colorInk</item>
+    </style>
+
+    <style name="DMHTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

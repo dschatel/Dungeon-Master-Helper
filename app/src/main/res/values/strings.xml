@@ -1,4 +1,150 @@
 <resources>
     <string name="app_name">Dungeon Master Helper</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="size">
+        <item>Tiny</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Huge</item>
+        <item>Gargantuan</item>
+    </string-array>
+
+    <string-array name="alignment">
+        <item>Lawful Good</item>
+        <item>Neutral Good</item>
+        <item>Chaotic Good</item>
+        <item>Lawful Neutral</item>
+        <item>True Neutral</item>
+        <item>Chaotic Neutral</item>
+        <item>Lawful Evil</item>
+        <item>Neutral Evil</item>
+        <item>Chaotic Evil</item>
+        <item>Unaligned</item>
+        <item>Any Good Alignment</item>
+        <item>Any Neutral Alignment</item>
+        <item>Any Evil Alignment</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>Aberration</item>
+        <item>Beast</item>
+        <item>Celestial</item>
+        <item>Construct</item>
+        <item>Dragon</item>
+        <item>Elemental</item>
+        <item>Fey</item>
+        <item>Fiend</item>
+        <item>Giant</item>
+        <item>Humanoid</item>
+        <item>Monstrosity</item>
+        <item>Ooze</item>
+        <item>Plant</item>
+        <item>Undead</item>
+    </string-array>
+
+    <string-array name="saving_throws">
+        <item>Str</item>
+        <item>Dex</item>
+        <item>Con</item>
+        <item>Int</item>
+        <item>Wis</item>
+        <item>Cha</item>
+    </string-array>
+
+    <string-array name="skills">
+        <item>Acrobatics</item>
+        <item>Animal Handling</item>
+        <item>Arcana</item>
+        <item>Athletics</item>
+        <item>Deception</item>
+        <item>History</item>
+        <item>Insight</item>
+        <item>Intimidation</item>
+        <item>Investigation</item>
+        <item>Medicine</item>
+        <item>Nature</item>
+        <item>Perception</item>
+        <item>Performance</item>
+        <item>Persuasion</item>
+        <item>Religion</item>
+        <item>Sleight of Hand</item>
+        <item>Stealth</item>
+        <item>Survival</item>
+    </string-array>
+
+    <string-array name="conditions">
+        <item>Blinded</item>
+        <item>Charmed</item>
+        <item>Deafened</item>
+        <item>Exhaustion</item>
+        <item>Frightened</item>
+        <item>Grappled</item>
+        <item>Incapacitated</item>
+        <item>Invisible</item>
+        <item>Paralyzed</item>
+        <item>Petrified</item>
+        <item>Poisoned</item>
+        <item>Prone</item>
+        <item>Restrained</item>
+        <item>Stunned</item>
+        <item>Unconscious</item>
+    </string-array>
+
+    <string-array name="damage_types">
+        <item>Acid</item>
+        <item>Bludgeoning</item>
+        <item>Cold</item>
+        <item>Fire</item>
+        <item>Force</item>
+        <item>Lightning</item>
+        <item>Necrotic</item>
+        <item>Nonmagical Bludgeoning</item>
+        <item>Nonmagical Piercing</item>
+        <item>Nonmagical Slashing</item>
+        <item>Piercing</item>
+        <item>Poison</item>
+        <item>Psychic</item>
+        <item>Radiant</item>
+        <item>Slashing</item>
+        <item>Thunder</item>
+    </string-array>
+
+    <string-array name="speed_types">
+        <item>Land</item>
+        <item>Burrow</item>
+        <item>Climb</item>
+        <item>Fly</item>
+        <item>Swim</item>
+
+    </string-array>
+
+    <string-array name="senses">
+        <item>Blindsight</item>
+        <item>Darkvision</item>
+        <item>Tremorsense</item>
+        <item>Truesight</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>Abyssal</item>
+        <item>Celestial</item>
+        <item>Common</item>
+        <item>Deep Speech</item>
+        <item>Draconic</item>
+        <item>Dwarvish</item>
+        <item>Elvish</item>
+        <item>Giant</item>
+        <item>Gnomish</item>
+        <item>Goblin</item>
+        <item>Halfling</item>
+        <item>Infernal</item>
+        <item>Orc</item>
+        <item>Primordial</item>
+        <item>Sylvan</item>
+        <item>Undercommon</item>
+    </string-array>
+
+
 </resources>

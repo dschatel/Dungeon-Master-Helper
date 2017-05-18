@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorParchment">#ECCE90</color>
+    <color name="colorParchmentTop">#E7B22E</color>
+    <color name="colorInk">#4B1F12</color>
 </resources>
