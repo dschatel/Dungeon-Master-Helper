@@ -95,16 +95,20 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorInk"
-                android:layout_below="@id/monsternamebar"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                android:layout_alignBaseline="@+id/armorclass"
+                android:layout_alignBottom="@+id/armorclass"
+                android:layout_alignParentStart="true" />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/armorclass"
-                android:text="Number"
+                android:inputType="number"
+                android:hint="Enter AC"
+                android:maxLines="1"
                 android:textColor="@color/colorInk"
-                android:textSize="18dp"
+                android:textSize="12dp"
                 android:layout_below="@id/monsternamebar"
                 android:layout_toRightOf="@id/actag"
                 android:paddingLeft="5dp" />
@@ -117,17 +121,22 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorInk"
-                android:layout_below="@id/actag"
-                android:paddingLeft="5dp" />
+                android:paddingLeft="5dp"
+                android:layout_alignBaseline="@+id/hitpoints"
+                android:layout_alignBottom="@+id/hitpoints"
+                android:layout_alignParentStart="true" />
 
-            <TextView
+
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/hitpoints"
-                android:text="Number"
+                android:hint="Enter HP"
+                android:inputType="number"
                 android:textColor="@color/colorInk"
-                android:textSize="18dp"
-                android:layout_below="@id/actag"
+                android:textSize="12dp"
+                android:maxLines="1"
+                android:layout_below="@id/armorclass"
                 android:layout_toRightOf="@id/hptag"
                 android:paddingLeft="5dp"/>
 
@@ -139,25 +148,36 @@
                 android:text="Speed"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:layout_below="@id/hptag"
+                android:layout_below="@id/hitpoints"
                 android:paddingLeft="5dp" />
 
-            <TextView
+                <Button
+                    android:background="@color/colorInk"
+                    android:textColor="@android:color/white"
+                    android:text="+"
+                    android:id="@+id/add_speed"
+                    android:layout_width="20dp"
+                    android:layout_toRightOf="@id/speedtag"
+                    android:layout_below="@id/hitpoints"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/speed"
-                android:text="Number"
-                android:textSize="18dp"
-                android:textColor="@color/colorInk"
-                android:layout_below="@id/hptag"
-                android:layout_toRightOf="@id/speedtag"
-                android:paddingLeft="5dp"/>
+                android:id="@+id/speedtable"
+                android:layout_below="@id/speedtag"
+                android:layout_toRightOf="@id/speedtag">
+
+
+            </TableLayout>
 
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2dip"
                 android:background="@color/colorInk"
-                android:layout_below="@+id/speedtag"
+                android:layout_below="@+id/speedtable"
                 android:layout_alignParentStart="true"
                 android:id="@+id/hpacspeedbar"
                 android:layout_margin="5dp"/>

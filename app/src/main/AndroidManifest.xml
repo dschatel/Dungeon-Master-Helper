@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/DMHTheme">
         <activity
-            android:name=".HomeActivity"
+            android:name=".Add_Edit_Monster"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

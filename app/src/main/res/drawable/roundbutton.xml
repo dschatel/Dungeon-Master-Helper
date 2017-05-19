@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorInk">
+    <item android:state_pressed="false">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorInk"/>
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/colorInk"/>
+        </shape>
+    </item>// Put your color for ripple effect
+    <item android:id="@android:id/mask">
+        <shape android:shape="oval" >
+            <solid android:color="@android:color/black" /> //Color not displayed,just to tell ripple about the bounds
+        </shape>
+    </item>
+    <item android:drawable="@drawable/custom_plus_icon" /> //And
+    your drawable
+</ripple>
