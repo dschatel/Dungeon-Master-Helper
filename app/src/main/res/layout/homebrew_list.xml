@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="falc.dungeonmasterhelper.View_Monster"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appbarlayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:theme="@style/Toolbar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view_layout"
+        android:layout_below="@+id/appbarlayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/monsterheader"
+                android:text="Monsters"
+                android:textColor="@color/colorInk"
+                android:textSize="24dp"
+                android:paddingLeft="5dp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="@color/colorInk"
+                android:layout_below="@+id/monsterheader"
+                android:layout_alignParentStart="true"
+                android:id="@+id/monsterdivider"
+                android:layout_margin="5dp"/>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/monsterlist"
+                android:layout_below="@id/monsterdivider">
+            </ListView>
+
+            </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

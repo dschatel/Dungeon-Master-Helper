@@ -9,10 +9,10 @@ public class Sense {
     private String senseName;
     private int senseRange;
 
-    public Sense(String senseName, int senseRange) {
+ /*   public Sense(String senseName, int senseRange) {
         this.senseName = senseName;
         this.senseRange = senseRange;
-    }
+    }*/
 
     public String getSenseName() {
         return senseName;

@@ -9,10 +9,10 @@ public class Skill {
     private String skillName;
     private int skillBonus;
 
-    public Skill(String skillName, int skillBonus) {
+  /*  public Skill(String skillName, int skillBonus) {
         this.skillBonus = skillBonus;
         this.skillName = skillName;
-    }
+    }*/
 
     public String getSkillName() {
         return skillName;

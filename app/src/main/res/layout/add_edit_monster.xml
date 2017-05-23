@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="falc.dungeonmasterhelper.HomeActivity"
+    tools:context="falc.dungeonmasterhelper.View_Monster"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     <android.support.design.widget.AppBarLayout
@@ -122,22 +122,36 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorInk"
                 android:paddingLeft="5dp"
-                android:layout_alignBaseline="@+id/hitpoints"
-                android:layout_alignBottom="@+id/hitpoints"
+                android:layout_alignBaseline="@+id/dicetype"
+                android:layout_alignBottom="@+id/dicetype"
                 android:layout_alignParentStart="true" />
 
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hitpoints"
-                android:hint="Enter HP"
+                android:id="@+id/numdice"
+                android:hint="Num Dice"
                 android:inputType="number"
                 android:textColor="@color/colorInk"
                 android:textSize="12dp"
                 android:maxLines="1"
                 android:layout_below="@id/armorclass"
                 android:layout_toRightOf="@id/hptag"
+                android:paddingLeft="5dp"/>
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dicetype"
+                android:hint="Dice Type"
+                android:inputType="number"
+                android:textColor="@color/colorInk"
+                android:textSize="12dp"
+                android:maxLines="1"
+                android:layout_below="@id/armorclass"
+                android:layout_toRightOf="@id/numdice"
                 android:paddingLeft="5dp"/>
 
             <TextView
@@ -148,7 +162,7 @@
                 android:text="Speed"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:layout_below="@id/hitpoints"
+                android:layout_below="@id/dicetype"
                 android:paddingLeft="5dp" />
 
                 <Button
@@ -158,7 +172,7 @@
                     android:id="@+id/add_speed"
                     android:layout_width="20dp"
                     android:layout_toRightOf="@id/speedtag"
-                    android:layout_below="@id/hitpoints"
+                    android:layout_below="@id/dicetype"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp" />
 
@@ -193,14 +207,14 @@
                 android:text="STR"
                 android:paddingLeft="25dp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/strength"
                 android:textColor="@color/colorInk"
                 android:layout_below="@id/strtag"
                 android:textSize="18dp"
-                android:text="###"
+                android:hint="###"
                 android:paddingLeft="25dp"/>
 
             <TextView
@@ -215,7 +229,7 @@
                 android:text="DEX"
                 android:paddingLeft="25dp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/dexterity"
@@ -223,8 +237,8 @@
                 android:layout_below="@id/dextag"
                 android:layout_toRightOf="@id/strength"
                 android:textSize="18dp"
-                android:text="###"
-                android:paddingLeft="25dp"/>
+                android:hint="###"
+                android:paddingLeft="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -238,7 +252,7 @@
                 android:text="CON"
                 android:paddingLeft="25dp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/constitution"
@@ -246,7 +260,7 @@
                 android:layout_below="@id/contag"
                 android:layout_toRightOf="@id/dexterity"
                 android:textSize="18dp"
-                android:text="###"
+                android:hint="###"
                 android:paddingLeft="25dp"/>
 
             <TextView
@@ -261,7 +275,7 @@
                 android:text="INT"
                 android:paddingLeft="25dp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/intelligence"
@@ -269,7 +283,7 @@
                 android:layout_below="@id/inttag"
                 android:layout_toRightOf="@id/constitution"
                 android:textSize="18dp"
-                android:text="###"
+                android:hint="###"
                 android:paddingLeft="25dp"/>
 
             <TextView
@@ -284,7 +298,7 @@
                 android:text="WIS"
                 android:paddingLeft="25dp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/wisdom"
@@ -292,8 +306,8 @@
                 android:layout_below="@id/wistag"
                 android:layout_toRightOf="@id/intelligence"
                 android:textSize="18dp"
-                android:text="###"
-                android:paddingLeft="25dp"/>
+                android:hint="###"
+                android:paddingLeft="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -307,7 +321,7 @@
                 android:text="CHA"
                 android:paddingLeft="25dp"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/charisma"
@@ -315,8 +329,8 @@
                 android:layout_below="@id/chatag"
                 android:layout_toRightOf="@id/wisdom"
                 android:textSize="18dp"
-                android:text="###"
-                android:paddingLeft="25dp"/>
+                android:hint="###"
+                android:paddingLeft="20dp"/>
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2dip"
@@ -337,6 +351,27 @@
                 android:text="Saving Throws"
                 android:textColor="@color/colorInk"/>
 
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_savingthrow"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/savingtag"
+                android:layout_below="@id/statblockbar"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/savingthrowtable"
+                android:layout_below="@id/savingtag">
+
+
+            </TableLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -344,9 +379,30 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/savingtag"
+                android:layout_below="@id/savingthrowtable"
                 android:text="Skills"
                 android:textColor="@color/colorInk"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_skill"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/skilltag"
+                android:layout_below="@id/savingthrowtable"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/skilltable"
+                android:layout_below="@id/skilltag">
+
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -355,9 +411,30 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/skilltag"
+                android:layout_below="@id/skilltable"
                 android:text="Damage Resistances"
                 android:textColor="@color/colorInk"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_damresist"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/damresisttag"
+                android:layout_below="@id/skilltable"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/damresisttable"
+                android:layout_below="@id/damresisttag">
+
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -366,9 +443,30 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/damresisttag"
+                android:layout_below="@id/damresisttable"
                 android:text="Damage Immunities"
                 android:textColor="@color/colorInk"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_damimmunity"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/damimmunetag"
+                android:layout_below="@id/damresisttable"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/damimmunetable"
+                android:layout_below="@id/damimmunetag">
+
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -377,9 +475,30 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/damimmunetag"
+                android:layout_below="@id/damimmunetable"
                 android:text="Condition Immunities"
                 android:textColor="@color/colorInk"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_condimmunity"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/condimmunetag"
+                android:layout_below="@id/damimmunetable"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/condimmunetable"
+                android:layout_below="@id/condimmunetag">
+
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -388,9 +507,30 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/condimmunetag"
+                android:layout_below="@id/condimmunetable"
                 android:text="Senses"
                 android:textColor="@color/colorInk"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_sense"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/sensestag"
+                android:layout_below="@id/condimmunetable"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sensestable"
+                android:layout_below="@id/sensestag">
+
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -399,9 +539,30 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/sensestag"
+                android:layout_below="@id/sensestable"
                 android:text="Languages"
                 android:textColor="@color/colorInk"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_language"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/languagetag"
+                android:layout_below="@id/sensestable"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp" />
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/languagetable"
+                android:layout_below="@id/languagetag">
+
+
+            </TableLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -410,9 +571,88 @@
                 android:textSize="18dip"
                 android:textStyle="bold"
                 android:paddingLeft="5dp"
-                android:layout_below="@id/languagetag"
+                android:layout_below="@id/languagetable"
                 android:text="Challenge"
                 android:textColor="@color/colorInk"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="@color/colorInk"
+                android:layout_below="@+id/challengetag"
+                android:layout_alignParentStart="true"
+                android:id="@+id/attributesbar"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/legendarytag"
+                android:textSize="18dip"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:layout_below="@id/attributesbar"
+                android:text="Is Monster Legendary?"
+                android:textColor="@color/colorInk"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/legendary_checkbox"
+                android:layout_toRightOf="@id/legendarytag"
+                android:layout_below="@id/attributesbar"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lairtag"
+                android:textSize="18dip"
+                android:textStyle="bold"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:layout_below="@id/legendary_checkbox"
+                android:text="Does Monster Have Lair?"
+                android:textColor="@color/colorInk"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lair_checkbox"
+                android:layout_toRightOf="@id/lairtag"
+                android:layout_below="@id/legendary_checkbox"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dip"
+                android:background="@color/colorInk"
+                android:layout_below="@+id/lair_checkbox"
+                android:layout_alignParentStart="true"
+                android:id="@+id/optionalsbar"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:id="@+id/save_monster"
+                android:layout_below="@id/optionalsbar"
+                android:background="@color/colorInk"
+                android:textColor="@color/colorWhite"
+                android:text="SAVE"
+                android:layout_marginLeft="100dp"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:id="@+id/cancel_monster"
+                android:layout_below="@id/optionalsbar"
+                android:layout_toRightOf="@id/save_monster"
+                android:background="@color/colorInk"
+                android:textColor="@color/colorWhite"
+                android:text="CANCEL"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"/>
 
         </RelativeLayout>
     </ScrollView>

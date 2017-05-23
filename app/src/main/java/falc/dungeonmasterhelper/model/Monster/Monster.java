@@ -34,10 +34,14 @@ public class Monster {
     private List<MonsterAction> monsterActions;
     //Add List of Legendary Actions
     private boolean isLegendary;
-    private boolean isSpellcaster; // Fold this into Traits
+   // private boolean isSpellcaster; // Fold this into Traits
     private int challengeRating;
     private int experience;
     private boolean hasLair;
+
+    public Monster (String name) {
+        this.name = name;
+    }
 
     public String getMonsterName() {
         return name;

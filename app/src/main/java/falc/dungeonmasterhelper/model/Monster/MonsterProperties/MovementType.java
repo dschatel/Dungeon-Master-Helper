@@ -9,10 +9,10 @@ public class MovementType {
     private String movementName;
     private int movementAmount;
 
-    public MovementType(String movementName, int movementAmount) {
+  /*  public MovementType(String movementName, int movementAmount) {
         this.movementAmount = movementAmount;
         this.movementName = movementName;
-    }
+    }*/
 
     public String getMovementName() {
         return movementName;

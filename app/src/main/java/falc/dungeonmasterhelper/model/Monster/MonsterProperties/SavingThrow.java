@@ -9,10 +9,10 @@ public class SavingThrow {
     private String save;
     private int bonus;
 
-    public SavingThrow(String save, int bonus) {
+   /* public SavingThrow(String save, int bonus) {
         this.save = save;
         this.bonus = bonus;
-    }
+    }*/
 
     public String getSave() {
         return save;
