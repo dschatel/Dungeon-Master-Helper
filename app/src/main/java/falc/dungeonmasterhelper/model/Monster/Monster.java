@@ -72,6 +72,10 @@ public class Monster implements Parcelable, Serializable {
         return size;
     }
 
+    public String getSizeTypeAlignment() {
+        return size + " " + type + ", " + alignment;
+    }
+
     public void setSize (String size) {
         this.size = size;
     }
@@ -141,6 +145,10 @@ public class Monster implements Parcelable, Serializable {
         if (abilityScores == null)
             abilityScores = new ArrayList<Ability>();
         abilityScores.add(ability);
+    }
+
+    public List<Ability> getAbilityScores() {
+        return abilityScores;
     }
 
     public void removeAbility(int index) {
@@ -456,5 +464,23 @@ public class Monster implements Parcelable, Serializable {
 
     public String toString() {
         return name;
+    }
+
+    public String getMovement() {
+
+        if (speed == null || speed.size() == 0) {
+            return "None";
+        }
+
+        String movement = "";
+
+        for (int i = 0; i < speed.size(); i++) {
+                movement += speed.get(i).getMovementName() + " " + speed.get(i).getMovementAmount() + " ft.";
+
+            if(i != speed.size() -1)
+                movement += ", ";
+        }
+
+        return movement;
     }
 }

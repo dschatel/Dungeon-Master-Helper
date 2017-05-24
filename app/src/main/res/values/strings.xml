@@ -125,6 +125,7 @@
         <item>Darkvision</item>
         <item>Tremorsense</item>
         <item>Truesight</item>
+        <item>Passive Perception</item>
     </string-array>
 
     <string-array name="languages">

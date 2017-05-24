@@ -131,7 +131,7 @@
         android:layout_width="fill_parent"
         android:layout_height="2dip"
         android:background="@color/colorInk"
-        android:layout_below="@+id/speedtag"
+        android:layout_below="@+id/speed"
         android:layout_alignParentStart="true"
         android:id="@+id/hpacspeedbar"
         android:layout_margin="5dp"/>
@@ -148,14 +148,15 @@
         android:paddingLeft="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:id="@+id/strength"
         android:textColor="@color/colorInk"
         android:layout_below="@id/strtag"
         android:textSize="18dp"
         android:text="###"
-        android:paddingLeft="25dp"/>
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -170,7 +171,7 @@
         android:paddingLeft="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:id="@+id/dexterity"
         android:textColor="@color/colorInk"
@@ -178,7 +179,8 @@
         android:layout_toRightOf="@id/strength"
         android:textSize="18dp"
         android:text="###"
-        android:paddingLeft="25dp"/>
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -193,7 +195,7 @@
         android:paddingLeft="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:id="@+id/constitution"
         android:textColor="@color/colorInk"
@@ -201,7 +203,8 @@
         android:layout_toRightOf="@id/dexterity"
         android:textSize="18dp"
         android:text="###"
-        android:paddingLeft="25dp"/>
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -216,7 +219,7 @@
         android:paddingLeft="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:id="@+id/intelligence"
         android:textColor="@color/colorInk"
@@ -224,7 +227,8 @@
         android:layout_toRightOf="@id/constitution"
         android:textSize="18dp"
         android:text="###"
-        android:paddingLeft="25dp"/>
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -239,7 +243,7 @@
         android:paddingLeft="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:id="@+id/wisdom"
         android:textColor="@color/colorInk"
@@ -247,7 +251,8 @@
         android:layout_toRightOf="@id/intelligence"
         android:textSize="18dp"
         android:text="###"
-        android:paddingLeft="25dp"/>
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -262,7 +267,7 @@
         android:paddingLeft="25dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="33dp"
         android:layout_height="wrap_content"
         android:id="@+id/charisma"
         android:textColor="@color/colorInk"
@@ -270,7 +275,9 @@
         android:layout_toRightOf="@id/wisdom"
         android:textSize="18dp"
         android:text="###"
-        android:paddingLeft="25dp"/>
+        android:layout_marginLeft="25dp"
+        android:textAlignment="center"/>
+
     <View
         android:layout_width="fill_parent"
         android:layout_height="2dip"

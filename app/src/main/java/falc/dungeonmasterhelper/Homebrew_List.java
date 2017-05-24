@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -53,6 +54,13 @@ public class Homebrew_List extends AppCompatActivity implements Serializable {
 
         monsterList = (ListView) findViewById(R.id.monsterlist);
         monsterList.setAdapter(new ArrayAdapter<Monster>(this, R.layout.monster, monsters));
+
+        monsterList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                viewMonster(i);
+            }
+        });
 
         addMonster = (Button) findViewById(R.id.add_monster);
         addMonster.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +114,16 @@ public class Homebrew_List extends AppCompatActivity implements Serializable {
     private void addMonster() {
         Intent intent = new Intent(this, Add_Edit_Monster.class);
         startActivityForResult(intent, 1);
+    }
+
+    private void viewMonster(int position) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("Monster", monsters.get(position));
+
+        Intent intent = new Intent(this, View_Monster.class);
+        intent.putExtras(bundle);
+
+        startActivity(intent);
     }
 
     @Override

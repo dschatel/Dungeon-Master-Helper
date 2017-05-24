@@ -26,8 +26,6 @@ import falc.dungeonmasterhelper.model.Monster.MonsterProperties.Skill;
 
 public class Add_Edit_Monster extends AppCompatActivity {
 
-    Button savebutton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
