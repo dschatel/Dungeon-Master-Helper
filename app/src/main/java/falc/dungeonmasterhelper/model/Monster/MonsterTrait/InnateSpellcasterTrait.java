@@ -3,11 +3,7 @@ package falc.dungeonmasterhelper.model.Monster.MonsterTrait;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-
-import falc.dungeonmasterhelper.model.Monster.MonsterAction.MonsterAction;
-import falc.dungeonmasterhelper.model.Monster.MonsterProperties.InnateSpell;
 
 /**
  * Created by Falcon24 on 1/22/2017.
@@ -20,6 +16,7 @@ public class InnateSpellcasterTrait extends MonsterTrait {
     private int saveDC;
     private int spellAttackHit;
     private HashMap<Integer, ArrayList<String>> spells;
+    private String monsterName;
 
     public InnateSpellcasterTrait (String name, String flavorText, String spellcastingAbility, int saveDC, int spellAttackHit) {
         super(name, flavorText);
@@ -73,7 +70,7 @@ public class InnateSpellcasterTrait extends MonsterTrait {
 
     public void formatDesc() {
 
-        String description = "Innate Spellcasting. The " + getMonsterName() +"'s spellcasting ability is " + spellcastingAbility + " (spell save DC " + saveDC + ". The " + getMonsterName() + " can innately case the following spells, requiring no material components:\n";
+        String description = "Innate Spellcasting. The " + monsterName +"'s spellcasting ability is " + spellcastingAbility + " (spell save DC " + saveDC + ". The " + monsterName + " can innately case the following spells, requiring no material components:\n";
 
         Iterator it = spells.entrySet().iterator();
         while(it.hasNext()) {

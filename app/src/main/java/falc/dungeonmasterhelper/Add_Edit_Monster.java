@@ -1,5 +1,6 @@
 package falc.dungeonmasterhelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -25,6 +26,8 @@ import falc.dungeonmasterhelper.model.Monster.MonsterProperties.Skill;
 
 public class Add_Edit_Monster extends AppCompatActivity {
 
+    Button savebutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,8 @@ public class Add_Edit_Monster extends AppCompatActivity {
         addCondImmunity();
         addSense();
         addLanguage();
+        createMonster();
+
     }
 
     @Override
@@ -439,6 +444,8 @@ public class Add_Edit_Monster extends AppCompatActivity {
                 newMonster.setSize(size.getSelectedItem().toString());
                 newMonster.setType(type.getSelectedItem().toString());
                 newMonster.setAlignment(alignment.getSelectedItem().toString());
+
+
                 newMonster.setArmorClass(Integer.parseInt(armorClass.getText().toString()));
                 newMonster.setNumHitDice(Integer.parseInt(numDice.getText().toString()));
                 newMonster.setHitDiceType(Integer.parseInt(diceType.getText().toString()));
@@ -623,7 +630,14 @@ public class Add_Edit_Monster extends AppCompatActivity {
                 else
                     newMonster.setHasLair(false);
 
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("NewMonster", newMonster);
 
+                Intent intent = new Intent();
+                intent.putExtras(bundle);
+
+                setResult(RESULT_OK, intent);
+                finish();
 
             }
         });

@@ -1,5 +1,9 @@
 package falc.dungeonmasterhelper.model.Monster.MonsterAction;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,7 +15,7 @@ import falc.dungeonmasterhelper.model.Monster.Monster;
  */
 
 //Superclass for monster actions
-public class MonsterAction extends Monster{
+public class MonsterAction implements Parcelable, Serializable {
 
     //Boolean checks that determine formatting of action description
     private boolean requiresAttackRoll;
@@ -43,7 +47,8 @@ public class MonsterAction extends Monster{
     private String onFailure;
 
     //Recharge data if hasRecharge is true
-    private int[] rechargeRange;
+    private int rechargeStart;
+    private int rechargeEnd;
 
     //perDay data if hasPerDayLimit is true
     private int perDay;
@@ -184,18 +189,16 @@ public class MonsterAction extends Monster{
     }
 
     public int getRechargeRangeStart() {
-        return rechargeRange[0];
+        return rechargeStart;
     }
 
     public void setRechargeRange(int rangeStart, int rangeEnd) {
-        if (rechargeRange == null)
-            rechargeRange = new int[2];
-        rechargeRange[0] = rangeStart;
-        rechargeRange[1] = rangeEnd;
+        this.rechargeStart = rangeStart;
+        this.rechargeEnd = rangeEnd;
     }
 
     public int getRechargeRangeEnd() {
-        return rechargeRange[1];
+        return rechargeEnd;
     }
 
     public int getPerDay() {
@@ -241,9 +244,9 @@ public class MonsterAction extends Monster{
             else if (rechargeOnLongRest)
                 actionDesc += ("Recharge on long rest)");
             else if(hasSingleRange)
-                actionDesc += " (Recharge " + rechargeRange[0] + ")";
+                actionDesc += " (Recharge " + rechargeStart + ")";
             else
-                actionDesc += " (Recharge " + rechargeRange[0] + "-" + rechargeRange[1] + ")";
+                actionDesc += " (Recharge " + rechargeStart + "-" + rechargeEnd + ")";
         }
 
 
@@ -316,4 +319,85 @@ public class MonsterAction extends Monster{
     }
 
 
+
+    protected MonsterAction(Parcel in) {
+        requiresAttackRoll = in.readByte() != 0x00;
+        doesDamage = in.readByte() != 0x00;
+        requiresSavingThrow = in.readByte() != 0x00;
+        hasRecharge = in.readByte() != 0x00;
+        rechargeOnShortRest = in.readByte() != 0x00;
+        rechargeOnLongRest = in.readByte() != 0x00;
+        hasSingleRange = in.readByte() != 0x00;
+        hasPerDayLimit = in.readByte() != 0x00;
+        actionName = in.readString();
+        reach = in.readInt();
+        targets = in.readInt();
+        flavorText = in.readString();
+        weapAttackType = in.readString();
+        toHit = in.readInt();
+        if (in.readByte() == 0x01) {
+            damage = new ArrayList<Damage>();
+            in.readList(damage, Damage.class.getClassLoader());
+        } else {
+            damage = null;
+        }
+        saveDC = in.readInt();
+        saveAbility = in.readString();
+        onSuccess = in.readString();
+        onFailure = in.readString();
+        rechargeStart = in.readInt();
+        rechargeEnd = in.readInt();
+        perDay = in.readInt();
+        actionDesc = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte((byte) (requiresAttackRoll ? 0x01 : 0x00));
+        dest.writeByte((byte) (doesDamage ? 0x01 : 0x00));
+        dest.writeByte((byte) (requiresSavingThrow ? 0x01 : 0x00));
+        dest.writeByte((byte) (hasRecharge ? 0x01 : 0x00));
+        dest.writeByte((byte) (rechargeOnShortRest ? 0x01 : 0x00));
+        dest.writeByte((byte) (rechargeOnLongRest ? 0x01 : 0x00));
+        dest.writeByte((byte) (hasSingleRange ? 0x01 : 0x00));
+        dest.writeByte((byte) (hasPerDayLimit ? 0x01 : 0x00));
+        dest.writeString(actionName);
+        dest.writeInt(reach);
+        dest.writeInt(targets);
+        dest.writeString(flavorText);
+        dest.writeString(weapAttackType);
+        dest.writeInt(toHit);
+        if (damage == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(damage);
+        }
+        dest.writeInt(saveDC);
+        dest.writeString(saveAbility);
+        dest.writeString(onSuccess);
+        dest.writeString(onFailure);
+        dest.writeInt(rechargeStart);
+        dest.writeInt(rechargeEnd);
+        dest.writeInt(perDay);
+        dest.writeString(actionDesc);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<MonsterAction> CREATOR = new Parcelable.Creator<MonsterAction>() {
+        @Override
+        public MonsterAction createFromParcel(Parcel in) {
+            return new MonsterAction(in);
+        }
+
+        @Override
+        public MonsterAction[] newArray(int size) {
+            return new MonsterAction[size];
+        }
+    };
 }

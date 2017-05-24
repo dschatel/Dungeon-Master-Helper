@@ -1,5 +1,10 @@
 package falc.dungeonmasterhelper.model.Monster.MonsterTrait;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 import falc.dungeonmasterhelper.model.Monster.Monster;
 
 /**
@@ -8,7 +13,7 @@ import falc.dungeonmasterhelper.model.Monster.Monster;
 
 
 //Superclass for monster traits
-public class MonsterTrait extends Monster {
+public class MonsterTrait implements Parcelable, Serializable {
 
     private String traitName;
     private String flavorText;
@@ -43,4 +48,35 @@ public class MonsterTrait extends Monster {
         traitDesc = traitName + ". " + flavorText;
     }
 
+
+    protected MonsterTrait(Parcel in) {
+        traitName = in.readString();
+        flavorText = in.readString();
+        traitDesc = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(traitName);
+        dest.writeString(flavorText);
+        dest.writeString(traitDesc);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<MonsterTrait> CREATOR = new Parcelable.Creator<MonsterTrait>() {
+        @Override
+        public MonsterTrait createFromParcel(Parcel in) {
+            return new MonsterTrait(in);
+        }
+
+        @Override
+        public MonsterTrait[] newArray(int size) {
+            return new MonsterTrait[size];
+        }
+    };
 }

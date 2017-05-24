@@ -15,6 +15,7 @@ public class MultiattackAction extends MonsterAction {
 
     private int numAttacks;
     private HashMap<MonsterAction, Integer> attacks;
+    private String monsterName;
 
     public MultiattackAction(String name, int numAttacks) {
 
@@ -56,7 +57,7 @@ public class MultiattackAction extends MonsterAction {
     }
 
     public void formatActionDesc() {
-        String description = "Multiattack. The " + getMonsterName() + "makes " + numAttacks + " attacks: ";
+        String description = "Multiattack. The " + monsterName + "makes " + numAttacks + " attacks: ";
 
         Iterator it = attacks.entrySet().iterator();
         while(it.hasNext()) {

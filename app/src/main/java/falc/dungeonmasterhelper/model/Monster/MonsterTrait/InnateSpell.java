@@ -1,4 +1,4 @@
-package falc.dungeonmasterhelper.model.Monster.MonsterProperties;
+package falc.dungeonmasterhelper.model.Monster.MonsterTrait;
 
 /**
  * Created by Falcon24 on 1/22/2017.

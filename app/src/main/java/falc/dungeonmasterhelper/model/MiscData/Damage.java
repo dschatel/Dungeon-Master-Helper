@@ -1,10 +1,13 @@
 package falc.dungeonmasterhelper.model.MiscData;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Falcon24 on 4/10/2017.
  */
 
-public class Damage {
+public class Damage implements Parcelable {
 
     private int numDice;
     private int diceType;
@@ -65,4 +68,37 @@ public class Damage {
     public String formatDamage() {
         return getAvgDmg() + "(" + numDice + "d" + diceType + " + " + extraDam + ") " + damageType + "damage";
     }
+
+    protected Damage(Parcel in) {
+        numDice = in.readInt();
+        diceType = in.readInt();
+        extraDam = in.readInt();
+        damageType = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(numDice);
+        dest.writeInt(diceType);
+        dest.writeInt(extraDam);
+        dest.writeString(damageType);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Damage> CREATOR = new Parcelable.Creator<Damage>() {
+        @Override
+        public Damage createFromParcel(Parcel in) {
+            return new Damage(in);
+        }
+
+        @Override
+        public Damage[] newArray(int size) {
+            return new Damage[size];
+        }
+    };
 }

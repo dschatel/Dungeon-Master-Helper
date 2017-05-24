@@ -18,18 +18,9 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-    <ScrollView android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scroll_view_layout"
-        android:layout_below="@+id/appbarlayout">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/monsterheader"
                 android:text="Monsters"
@@ -37,7 +28,20 @@
                 android:textSize="24dp"
                 android:paddingLeft="5dp"
                 android:textStyle="bold"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/appbarlayout"/>
+
+            <Button
+                android:background="@color/colorInk"
+                android:textColor="@android:color/white"
+                android:text="+"
+                android:id="@+id/add_monster"
+                android:layout_width="20dp"
+                android:layout_toRightOf="@id/monsterheader"
+                android:layout_below="@+id/appbarlayout"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"/>
 
             <View
                 android:layout_width="fill_parent"
@@ -50,15 +54,9 @@
 
             <ListView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/monsterlist"
                 android:layout_below="@id/monsterdivider">
             </ListView>
-
-            </RelativeLayout>
-
-
-
-    </ScrollView>
 
 </RelativeLayout>
