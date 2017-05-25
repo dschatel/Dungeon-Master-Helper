@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="falc.dungeonmasterhelper.View_Monster"
+    tools:context="falc.dungeonmasterhelper.activities.View_Monster"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     <android.support.design.widget.AppBarLayout
@@ -154,6 +154,19 @@
                 android:layout_toRightOf="@id/numdice"
                 android:paddingLeft="5dp"/>
 
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/extrahp"
+                android:hint="Extra HP"
+                android:inputType="number"
+                android:textColor="@color/colorInk"
+                android:textSize="12dp"
+                android:maxLines="1"
+                android:layout_below="@id/armorclass"
+                android:layout_toRightOf="@id/dicetype"
+                android:paddingLeft="5dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -208,14 +221,14 @@
                 android:paddingLeft="25dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/strength"
                 android:textColor="@color/colorInk"
                 android:layout_below="@id/strtag"
                 android:textSize="18dp"
                 android:hint="###"
-                android:paddingLeft="25dp"/>
+                android:layout_marginLeft="22dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -230,7 +243,7 @@
                 android:paddingLeft="25dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/dexterity"
                 android:textColor="@color/colorInk"
@@ -238,7 +251,7 @@
                 android:layout_toRightOf="@id/strength"
                 android:textSize="18dp"
                 android:hint="###"
-                android:paddingLeft="20dp"/>
+                android:layout_marginLeft="18dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -253,7 +266,7 @@
                 android:paddingLeft="25dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/constitution"
                 android:textColor="@color/colorInk"
@@ -261,7 +274,7 @@
                 android:layout_toRightOf="@id/dexterity"
                 android:textSize="18dp"
                 android:hint="###"
-                android:paddingLeft="25dp"/>
+                android:layout_marginLeft="18dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -276,7 +289,7 @@
                 android:paddingLeft="25dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/intelligence"
                 android:textColor="@color/colorInk"
@@ -284,7 +297,7 @@
                 android:layout_toRightOf="@id/constitution"
                 android:textSize="18dp"
                 android:hint="###"
-                android:paddingLeft="25dp"/>
+                android:layout_marginLeft="18dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -299,7 +312,7 @@
                 android:paddingLeft="25dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/wisdom"
                 android:textColor="@color/colorInk"
@@ -307,7 +320,7 @@
                 android:layout_toRightOf="@id/intelligence"
                 android:textSize="18dp"
                 android:hint="###"
-                android:paddingLeft="20dp"/>
+                android:layout_marginLeft="18dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -322,7 +335,7 @@
                 android:paddingLeft="25dp"/>
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/charisma"
                 android:textColor="@color/colorInk"
@@ -330,7 +343,7 @@
                 android:layout_toRightOf="@id/wisdom"
                 android:textSize="18dp"
                 android:hint="###"
-                android:paddingLeft="20dp"/>
+                android:layout_marginLeft="18dp"/>
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2dip"

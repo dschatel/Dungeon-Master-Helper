@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/DMHTheme">
         <activity
-            android:name=".Homebrew_List"
+            android:name=".activities.Homebrew_List"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,16 +18,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Add_Edit_Monster">
+        <activity android:name=".activities.Add_Edit_Monster">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Homebrew_List" />
+                android:value=".activities.Homebrew_List" />
         </activity>
 
-        <activity android:name=".View_Monster">
+        <activity android:name=".activities.View_Monster">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Homebrew_List" />
+                android:value=".activities.Homebrew_List" />
         </activity>
     </application>
 

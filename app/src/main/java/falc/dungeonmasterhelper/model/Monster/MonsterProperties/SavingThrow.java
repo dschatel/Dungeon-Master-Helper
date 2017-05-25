@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Falcon24 on 1/22/2017.
  */
 
-public class SavingThrow implements Parcelable, Serializable {
+public class SavingThrow extends Trait implements Parcelable, Serializable {
 
     private String save;
     private int bonus;
@@ -17,11 +17,11 @@ public class SavingThrow implements Parcelable, Serializable {
     public SavingThrow() {
     }
 
-    public String getSave() {
+    public String getName() {
         return save;
     }
 
-    public int getBonus() {
+    public int getValue() {
         return bonus;
     }
 

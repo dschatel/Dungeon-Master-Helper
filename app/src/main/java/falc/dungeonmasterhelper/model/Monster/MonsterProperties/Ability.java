@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Falcon24 on 1/22/2017.
  */
 
-public class Ability implements Parcelable, Serializable {
+public class Ability extends Trait implements Parcelable, Serializable {
 
     private String abilityName;
     private int abilityScore;
@@ -19,11 +19,11 @@ public class Ability implements Parcelable, Serializable {
         this.abilityScore = abilityScore;
     }
 
-    public String getAbilityName() {
+    public String getName() {
         return abilityName;
     }
 
-    public int getAbilityScore() {
+    public int getValue() {
         return abilityScore;
     }
 

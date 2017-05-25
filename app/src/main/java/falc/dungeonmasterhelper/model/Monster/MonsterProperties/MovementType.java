@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Falcon24 on 1/22/2017.
  */
 
-public class MovementType implements Parcelable, Serializable {
+public class MovementType extends Trait implements Parcelable, Serializable {
 
     private String movementName;
     private int movementAmount;
@@ -17,11 +17,11 @@ public class MovementType implements Parcelable, Serializable {
   public MovementType() {
     }
 
-    public String getMovementName() {
+    public String getName() {
         return movementName;
     }
 
-    public int getMovementAmount() {
+    public int getValue() {
         return movementAmount;
     }
 

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="falc.dungeonmasterhelper.View_Monster"
+    tools:context="falc.dungeonmasterhelper.activities.View_Monster"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 <android.support.design.widget.AppBarLayout
@@ -298,6 +298,15 @@
         android:text="Saving Throws"
         android:textColor="@color/colorInk"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/savingthrows"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/savingtag"
+            android:layout_marginLeft="5dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -305,9 +314,18 @@
         android:textSize="18dip"
         android:textStyle="bold"
         android:paddingLeft="5dp"
-        android:layout_below="@id/savingtag"
+        android:layout_below="@id/savingthrows"
         android:text="Skills"
         android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/skills"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/skilltag"
+            android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -316,9 +334,18 @@
         android:textSize="18dip"
         android:textStyle="bold"
         android:paddingLeft="5dp"
-        android:layout_below="@id/skilltag"
+        android:layout_below="@id/skills"
         android:text="Damage Resistances"
         android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/damresistance"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@+id/damresisttag"
+            android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -327,9 +354,18 @@
         android:textSize="18dip"
         android:textStyle="bold"
         android:paddingLeft="5dp"
-        android:layout_below="@id/damresisttag"
+        android:layout_below="@id/damresistance"
         android:text="Damage Immunities"
         android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/damimmunities"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/damimmunetag"
+            android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -338,9 +374,18 @@
         android:textSize="18dip"
         android:textStyle="bold"
         android:paddingLeft="5dp"
-        android:layout_below="@id/damimmunetag"
+        android:layout_below="@id/damimmunities"
         android:text="Condition Immunities"
         android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/condimmunities"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/condimmunetag"
+            android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -349,9 +394,18 @@
         android:textSize="18dip"
         android:textStyle="bold"
         android:paddingLeft="5dp"
-        android:layout_below="@id/condimmunetag"
+        android:layout_below="@id/condimmunities"
         android:text="Senses"
         android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/senses"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/sensestag"
+            android:layout_marginLeft="5dp"/>
 
     <TextView
     android:layout_width="wrap_content"
@@ -360,9 +414,18 @@
     android:textSize="18dip"
     android:textStyle="bold"
     android:paddingLeft="5dp"
-    android:layout_below="@id/sensestag"
+    android:layout_below="@id/senses"
     android:text="Languages"
     android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/languages"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/languagetag"
+            android:layout_marginLeft="5dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -371,9 +434,18 @@
         android:textSize="18dip"
         android:textStyle="bold"
         android:paddingLeft="5dp"
-        android:layout_below="@id/languagetag"
+        android:layout_below="@id/languages"
         android:text="Challenge"
         android:textColor="@color/colorInk"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/challengerating"
+            android:textSize="18dp"
+            android:textColor="@color/colorInk"
+            android:layout_below="@id/challengetag"
+            android:layout_marginLeft="5dp"/>
 
     <View
         android:layout_width="fill_parent"

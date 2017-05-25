@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Falcon24 on 1/22/2017.
  */
 
-public class Skill implements Parcelable, Serializable {
+public class Skill extends Trait implements Parcelable, Serializable {
 
     private String skillName;
     private int skillBonus;
@@ -17,11 +17,11 @@ public class Skill implements Parcelable, Serializable {
   public Skill() {
     }
 
-    public String getSkillName() {
+    public String getName() {
         return skillName;
     }
 
-    public int getSkillBonus() {
+    public int getValue() {
         return skillBonus;
     }
 

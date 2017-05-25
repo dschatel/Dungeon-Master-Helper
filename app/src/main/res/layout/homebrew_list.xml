@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="falc.dungeonmasterhelper.View_Monster"
+    tools:context="falc.dungeonmasterhelper.activities.View_Monster"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     <android.support.design.widget.AppBarLayout
@@ -29,7 +29,7 @@
                 android:paddingLeft="5dp"
                 android:textStyle="bold"
                 android:layout_alignParentStart="true"
-                android:layout_below="@+id/appbarlayout"/>
+                android:layout_below="@id/appbarlayout"/>
 
             <Button
                 android:background="@color/colorInk"
@@ -38,7 +38,7 @@
                 android:id="@+id/add_monster"
                 android:layout_width="20dp"
                 android:layout_toRightOf="@id/monsterheader"
-                android:layout_below="@+id/appbarlayout"
+                android:layout_below="@id/appbarlayout"
                 android:layout_height="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"/>

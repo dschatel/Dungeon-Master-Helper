@@ -151,6 +151,10 @@ public class Monster implements Parcelable, Serializable {
         return abilityScores;
     }
 
+    public void setAbilityScores(List<Ability> scores) {
+        abilityScores = scores;
+    }
+
     public void removeAbility(int index) {
         abilityScores.remove(index);
     }
@@ -475,12 +479,210 @@ public class Monster implements Parcelable, Serializable {
         String movement = "";
 
         for (int i = 0; i < speed.size(); i++) {
-                movement += speed.get(i).getMovementName() + " " + speed.get(i).getMovementAmount() + " ft.";
+                movement += speed.get(i).getName() + " " + speed.get(i).getValue() + " ft.";
 
             if(i != speed.size() -1)
                 movement += ", ";
         }
 
         return movement;
+    }
+
+    public List<SavingThrow> getSavingThrowList() {
+        return savingThrows;
+    }
+
+    public List<Skill> getSkillList() {
+        return skills;
+    }
+
+    public List<Sense> getSensesList() {
+        return senses;
+    }
+
+    public List<String> getDamResistList() {
+        return damresistances;
+    }
+
+    public List<String> getDamImmuneList() {
+        return damimmunities;
+    }
+
+    public List<String> getCondImmuneList() {
+        return condimmunities;
+    }
+
+    public List<String> getLanguageList() {
+        return languages;
+    }
+
+    public String getSavingThrows() {
+
+        if (savingThrows == null || savingThrows.size() == 0)
+            return "None";
+
+            String savingThrow = "";
+
+            for (int i = 0; i < savingThrows.size(); i++) {
+                savingThrow += savingThrows.get(i).getName() + " +" + savingThrows.get(i).getValue();
+
+                if(i != savingThrows.size() -1)
+                    savingThrow+=", ";
+            }
+
+        return savingThrow;
+
+    }
+
+    public String getSkills() {
+
+        if (skills == null || skills.size() == 0)
+            return "None";
+
+        String skill = "";
+
+        for (int i = 0; i < skills.size(); i++) {
+            skill += skills.get(i).getName() + " +" + skills.get(i).getValue();
+
+            if(i != skills.size() -1)
+                skill+=", ";
+        }
+
+        return skill;
+
+    }
+
+    public String getDamResist() {
+        if (damresistances == null || damresistances.size() == 0)
+            return "None";
+
+        String damResists = "";
+
+        for (int i = 0; i < damresistances.size(); i++) {
+            damResists += damresistances.get(i);
+
+            if(i != damresistances.size() -1)
+                damResists+=", ";
+        }
+
+        return damResists;
+    }
+
+    public List<MovementType> getMovementList() {
+        return speed;
+    }
+
+    public void setMovementList(List<MovementType> movement) {
+        speed = movement;
+    }
+
+    public void setSavingThrowList(List<SavingThrow> saves) {
+        savingThrows = saves;
+    }
+
+    public void setSkillList(List<Skill> skill) {
+        skills = skill;
+    }
+
+    public void setDamResistList(List<String> damResist) {
+        damresistances = damResist;
+    }
+
+    public void setDamImmuneList(List<String> damImmune) {
+        damimmunities = damImmune;
+    }
+
+    public void setCondImmuneList(List<String> condImmune) {
+        condimmunities = condImmune;
+    }
+
+    public void setSenseList(List<Sense> sense) {
+        senses = sense;
+    }
+
+    public void setLanguageList(List<String> lang) {
+        languages = lang;
+    }
+
+    public String getDamImmunities() {
+        if (damimmunities == null || damimmunities.size() == 0)
+            return "None";
+
+        String damImmunities = "";
+
+        for (int i = 0; i < damimmunities.size(); i++) {
+            damImmunities += damimmunities.get(i);
+
+            if(i != damimmunities.size() -1)
+                damImmunities+=", ";
+        }
+
+        return damImmunities;
+    }
+
+    public String getCondImmunities() {
+        if (condimmunities == null || condimmunities.size() == 0)
+            return "None";
+
+        String condImmunities = "";
+
+        for (int i = 0; i < condimmunities.size(); i++) {
+            condImmunities += condimmunities.get(i);
+
+            if(i != condimmunities.size() -1)
+                condImmunities+=", ";
+        }
+
+        return condImmunities;
+    }
+
+    public String getLanguages() {
+        if (languages == null || languages.size() == 0)
+            return "None";
+
+        String language = "";
+
+        for (int i = 0; i < languages.size(); i++) {
+            language += languages.get(i);
+
+            if(i != languages.size() -1)
+                language+=", ";
+        }
+
+        return language;
+    }
+
+    public String getSenses() {
+        if (senses == null || senses.size() == 0)
+            return "None";
+
+        String sense = "";
+
+        for (int i = 0; i < senses.size(); i++) {
+
+            sense+= senses.get(i).getName() + " " + senses.get(i).getValue();
+            if (!senses.get(i).getName().equals("Passive Perception"))
+                sense+= " ft.";
+
+            if(i != senses.size() -1)
+                sense+=", ";
+        }
+
+        return sense;
+    }
+
+    public String formatAbilityScore(Ability ability) {
+
+        int abilityMod = getAbilityMod(ability.getValue());
+
+        if(abilityMod >0)
+            return ability.getValue() + " (+" + abilityMod + ")";
+        else
+            return ability.getValue() + "(" + abilityMod + ")";
+
+    }
+
+    public int getAbilityMod (int abilityScore) {
+        return (abilityScore / 2) - 5;
     }
 }

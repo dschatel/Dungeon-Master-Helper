@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by Falcon24 on 1/22/2017.
  */
 
-public class Sense implements Parcelable, Serializable {
+public class Sense extends Trait implements Parcelable, Serializable {
 
     private String senseName;
     private int senseRange;
@@ -17,11 +17,11 @@ public class Sense implements Parcelable, Serializable {
     public Sense() {
     }
 
-    public String getSenseName() {
+    public String getName() {
         return senseName;
     }
 
-    public int getSenseRange(){
+    public int getValue(){
         return senseRange;
     }
 

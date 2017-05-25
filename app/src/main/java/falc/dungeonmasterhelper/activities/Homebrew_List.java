@@ -1,9 +1,9 @@
-package falc.dungeonmasterhelper;
+package falc.dungeonmasterhelper.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -14,16 +14,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import falc.dungeonmasterhelper.R;
 import falc.dungeonmasterhelper.model.Monster.Monster;
 
 public class Homebrew_List extends AppCompatActivity implements Serializable {
@@ -62,6 +61,14 @@ public class Homebrew_List extends AppCompatActivity implements Serializable {
             }
         });
 
+        monsterList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                editOrDelete(i);
+                return true;
+            }
+        });
+
         addMonster = (Button) findViewById(R.id.add_monster);
         addMonster.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +79,44 @@ public class Homebrew_List extends AppCompatActivity implements Serializable {
     }
 
 
+    private void editOrDelete(final int pos) {
+        CharSequence editOrDelete[] = new CharSequence[] {"Edit", "Delete"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose an Option");
+        builder.setItems(editOrDelete, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i == 1) {
+                    monsters.remove(pos);
+                    updateMonsterList();
+                }
+                else if (i == 0) {
+                    editMonster(pos);
+                }
+
+
+            }
+        });
+        builder.show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
+    }
+
+    private void updateMonsterList() {
+
+        monsterList.setAdapter(new ArrayAdapter<Monster>(this, R.layout.monster, monsters));
+
+        try {
+            saveToFile(monsters);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -113,7 +153,18 @@ public class Homebrew_List extends AppCompatActivity implements Serializable {
 
     private void addMonster() {
         Intent intent = new Intent(this, Add_Edit_Monster.class);
+        intent.putExtra("requestCode", 1);
         startActivityForResult(intent, 1);
+    }
+
+    private void editMonster(int pos) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("Monster", monsters.get(pos));
+        Intent intent = new Intent(this, Add_Edit_Monster.class);
+        intent.putExtras(bundle);
+        intent.putExtra("requestCode", 2);
+        intent.putExtra("Position", pos);
+        startActivityForResult(intent, 2);
     }
 
     private void viewMonster(int position) {
@@ -136,6 +187,11 @@ public class Homebrew_List extends AppCompatActivity implements Serializable {
         if (requestCode == 1) {
             Monster monster = bundle.getParcelable("NewMonster");
             monsters.add(monster);
+        }
+        else if(requestCode == 2) {
+            Monster monster = bundle.getParcelable("NewMonster");
+            int pos = intent.getExtras().getInt("Position");
+            monsters.set(pos, monster);
 
         }
 
